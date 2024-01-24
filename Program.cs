@@ -32,14 +32,13 @@
         }
         private static MenuActionService Initialize(MenuActionService actionService)
         {
-            actionService.AddNewAction(1, "Add item", "Main");
-            actionService.AddNewAction(2, "Remove item", "Main");
-            actionService.AddNewAction(3, "Show details", "Main");
-            actionService.AddNewAction(4, "List of Itemss", "Main");
-            actionService.AddNewAction(5, "Test test of Itemss", "Main");
+            actionService.AddNewAction(1, "Add coin", "Main");
+            actionService.AddNewAction(2, "Remove coin", "Main");
+            actionService.AddNewAction(3, "Show details all coins", "Main");
+            actionService.AddNewAction(4, "List of coins ", "Main");
             return actionService;
         }
 
     }
 }
-}
+
