@@ -28,6 +28,5 @@ namespace MyCoinsApp
             }
             return result;
         }
-
     }
 }
