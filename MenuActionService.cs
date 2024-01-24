@@ -10,14 +10,17 @@ namespace MyCoinsApp
     {
         private List<MenuAction> menuActions = new List<MenuAction>();
         //do wyświetlenia powyższej listy potrzeba poniższych metod
+
         public void AddNewAction(int id, string name, string menuName)
         {
             MenuAction menuAction = new MenuAction() { Id = id, Name = name, MenuName = menuName };
             menuActions.Add(menuAction);
         }
-        public List<MenuAction> GetMenuActionsByMenuName(string menuName)
+
+        public List<MenuAction> GetMenuActionsByMenuName (string menuName)
         {
             List<MenuAction> result = new List<MenuAction>();
+
             //pętla foreach przeliteruje po wszystkich elementach
             foreach (var menuAction in menuActions)
             {
@@ -27,7 +30,7 @@ namespace MyCoinsApp
                 }
             }
             return result;
-            1234
         }
+
     }
 }
