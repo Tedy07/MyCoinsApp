@@ -13,8 +13,10 @@
             actionService = Initialize(actionService);
 
 
-            Console.WriteLine("Welcome to MyCoinsApp !");
-            Console.WriteLine("Please let me know whate you want to do:");
+            Console.WriteLine("Welcome to MyCoinsApp!");
+            Console.WriteLine("Please let me know whate you want to do?");
+            Console.WriteLine("Press 1, 2, 3 or 4: ");
+            Console.WriteLine();
             var mainMenu = actionService.GetMenuActionsByMenuName("Main");
 
             for (int i = 0; i < mainMenu.Count; i++)
@@ -23,9 +25,21 @@
             }
 
             var operation = Console.ReadKey();
-            //odczytuje tylko 1 znak wprowadzony na klawiaturze
+            //ReadKey odczytuje tylko 1 znak wprowadzony na klawiaturze
             switch (operation.KeyChar)
             {
+                case '1':
+                    break;
+                case '2':
+                    break;
+                case '3':
+                    break;
+                case '4':
+                    break;
+                default:
+                    Console.WriteLine();
+                    Console.WriteLine("Action you entered does not exist");
+                    break;
 
             }
 

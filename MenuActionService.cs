@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyCoinsApp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace MyCoinsApp
     public class MenuActionService
     {
         private List<MenuAction> menuActions = new List<MenuAction>();
+
         //do wyświetlenia powyższej listy potrzeba poniższych metod
 
         public void AddNewAction(int id, string name, string menuName)
@@ -17,7 +19,7 @@ namespace MyCoinsApp
             menuActions.Add(menuAction);
         }
 
-        public List<MenuAction> GetMenuActionsByMenuName (string menuName)
+        public List<MenuAction> GetMenuActionsByMenuName(string menuName)
         {
             List<MenuAction> result = new List<MenuAction>();
 
@@ -29,6 +31,7 @@ namespace MyCoinsApp
                     result.Add(menuAction);
                 }
             }
+
             return result;
         }
 

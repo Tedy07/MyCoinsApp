@@ -8,12 +8,12 @@ namespace MyCoinsApp
 {
     internal class ItemService
     {
-        //    public List<Item> Items { get; set; }
+        public List<Item> Items { get; set; }
 
-        //    public ItemService()
-        //    {
-        //        Items = new List<Item>();
-        //    }
+        public ItemService()
+        {
+            Items = new List<Item>();
+        }
 
     }
 }
