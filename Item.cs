@@ -8,5 +8,9 @@ namespace MyCoinsApp
 {
     public class Item
     {
+        public int id { get; set; }
+        public string Name { get; set; }
+        public string TypeId { get; set; }
+
     }
 }

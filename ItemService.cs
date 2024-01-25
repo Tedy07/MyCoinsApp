@@ -28,5 +28,10 @@ namespace MyCoinsApp
             var operation = Console.ReadKey();
             return operation;
         }
+
+        public void AddNewItem(char itemType)
+        {
+            int 
+        }
     }
 }
