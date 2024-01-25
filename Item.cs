@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyCoinsApp
 {
-    internal class Item
+    public class Item
     {
     }
 }
