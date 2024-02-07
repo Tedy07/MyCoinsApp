@@ -44,7 +44,7 @@ namespace MyCoinsApp
             var id = Console.ReadLine();
 
             int itemId;
-            Int32.TryParse(id, out  itemId);
+            Int32.TryParse(id, out itemId);
             Console.WriteLine("Please enter name for new item:");
             var name = Console.ReadLine();
 
@@ -56,20 +56,29 @@ namespace MyCoinsApp
         }
 
         public int RemoveItemView()
-            // metoda ta zwróci int ponieważ użytkjownik poda numer przedmiotu do usunięcia
+        // metoda ta zwróci int ponieważ użytkjownik poda numer przedmiotu do usunięcia
         {
             Console.WriteLine("Please enter id for item you want to remove:");
             var itemId = Console.ReadKey();
             int id;
             Int32.TryParse(itemId.KeyChar.ToString(), out id);
-                
+
             return id;
 
         }
 
         public void RemoveItem(int removeId)
         {
-            
+            Item productToRemove = new Item();
+            foreach (var item in Items)
+            {
+                if(item.id == removeId)
+                {
+                    productToRemove = item;
+                    break;
+                } 
+            }
+            Items.Remove(productToRemove);
         }
     }
 }
