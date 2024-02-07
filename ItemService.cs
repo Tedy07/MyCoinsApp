@@ -53,8 +53,23 @@ namespace MyCoinsApp
 
             Items.Add(item);
             return itemId;
+        }
 
+        public int RemoveItemView()
+            // metoda ta zwróci int ponieważ użytkjownik poda numer przedmiotu do usunięcia
+        {
+            Console.WriteLine("Please enter id for item you want to remove:");
+            var itemId = Console.ReadKey();
+            int id;
+            Int32.TryParse(itemId.KeyChar.ToString(), out id);
+                
+            return id;
 
+        }
+
+        public void RemoveItem(int removeId)
+        {
+            
         }
     }
 }

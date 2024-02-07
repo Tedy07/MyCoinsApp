@@ -36,6 +36,8 @@
                     var id = itemService.AddNewItem(keyInfo.KeyChar);
                     break;
                 case '2':
+                    var removeId = itemService.RemoveItemView();
+                    itemService.RemoveItem(removeId);
                     break;
                 case '3':
                     break;
