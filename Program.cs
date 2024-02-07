@@ -25,7 +25,7 @@
             }
             var operation = Console.ReadKey();
             //ReadKey odczytuje tylko 1 znak wprowadzony na klawiaturze
-
+                       
             ItemService itemService = new ItemService();
              //pobiera informacje o podmenu do pkt 1
 
@@ -33,7 +33,7 @@
             {
                 case '1':
                     var keyInfo = itemService.AddNewItemView(actionService);
-                    itemService.AddNewItem(keyInfo.KeyChar);
+                    var id = itemService.AddNewItem(keyInfo.KeyChar);
                     break;
                 case '2':
                     break;
@@ -56,14 +56,14 @@
             actionService.AddNewAction(2, "Remove coin", "Main");
             actionService.AddNewAction(3, "Show details", "Main");
             actionService.AddNewAction(4, "List of coins ", "Main");
-
+                      
             actionService.AddNewAction(1, "gold", "AddNewItemViewMain");
             actionService.AddNewAction(2, "silver", "AddNewItemViewMain");
             actionService.AddNewAction(3, "platinum", "AddNewItemViewMain");
 
             return actionService;
         }
-
+        
     }
 }
 

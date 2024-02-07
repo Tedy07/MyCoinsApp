@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,20 +20,41 @@ namespace MyCoinsApp
         public ConsoleKeyInfo AddNewItemView(MenuActionService actionService)
         //ta metoda tworzy kolejne podmenu w pkt 1.
         // poniżej wyświetlimy to menu dokładnie jak robiliśmy to w głównym menu, służy też do przekazania do switch
+        // Ta metoda odpowiedzialna jest za wyświetlanie kolejnych menu
         {
-            var AddNewItemViewMenu = actionService.GetMenuActionsByMenuName("Main");
+            var addNewItemViewMenu = actionService.GetMenuActionsByMenuName("AddNewItemViewMain");
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("Please select item type:");
-            for (int i = 0; i < AddNewItemViewMenu.Count; i++)
+            for (int i = 0; i < addNewItemViewMenu.Count; i++)
             {
-                Console.WriteLine($"{AddNewItemViewMenu[i].Id}. {AddNewItemViewMenu[i].Name}");
+                Console.WriteLine($"{addNewItemViewMenu[i].Id}. {addNewItemViewMenu[i].Name}");
             }
             var operation = Console.ReadKey();
             return operation;
         }
 
-        public void AddNewItem(char itemType)
+        public int AddNewItem(char itemType)
         {
-            int 
+            int itemTypeId;
+            Int32.TryParse(itemType.ToString(), out itemTypeId);
+            Item item = new Item();
+            item.TypeId = itemTypeId;
+            Console.WriteLine("Please enter id for new item: ");
+            var id = Console.ReadLine();
+
+            int itemId;
+            Int32.TryParse(id, out  itemId);
+            Console.WriteLine("Please enter name for new item:");
+            var name = Console.ReadLine();
+
+            item.id = itemId;
+            item.Name = name;
+
+            Items.Add(item);
+            return itemId;
+
+
         }
     }
 }
