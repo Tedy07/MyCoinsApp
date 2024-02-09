@@ -10,6 +10,8 @@
         {
             //nowy obiekt serwisu
             MenuActionService actionService = new MenuActionService();
+            ItemService itemService = new ItemService();
+            //pobiera informacje o podmenu do pkt 1
             actionService = Initialize(actionService);
 
 
@@ -17,6 +19,8 @@
             while (true)
             {
                 // stworzono pętlę nieskończoną, aby program działał aż do zamknięcia 
+
+                Console.WriteLine();
                 Console.WriteLine("Please let me know whate you want to do?");
                 Console.WriteLine("Press 1, 2, 3 or 4: ");
                 Console.WriteLine();
@@ -29,9 +33,7 @@
                 var operation = Console.ReadKey();
                 //ReadKey odczytuje tylko 1 znak wprowadzony na klawiaturze
 
-                ItemService itemService = new ItemService();
-                //pobiera informacje o podmenu do pkt 1
-
+                
                 switch (operation.KeyChar)
                 {
                     case '1':
@@ -43,6 +45,8 @@
                         itemService.RemoveItem(removeId);
                         break;
                     case '3':
+                        var detailId = itemService.ItemDetailSelectionView();
+                        itemService.ItemDetailView(detailId);
                         break;
                     case '4':
                         break;
@@ -50,7 +54,7 @@
                         Console.WriteLine();
                         Console.WriteLine("Action you entered does not exist");
                         break;
-
+                        Console.WriteLine();
                 }
                 // tutaj się kończy pętla while, ciągłe działanie programu
             }

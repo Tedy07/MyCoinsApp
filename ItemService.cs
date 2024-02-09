@@ -74,13 +74,42 @@ namespace MyCoinsApp
             Item productToRemove = new Item();
             foreach (var item in Items)
             {
-                if(item.id == removeId)
+                if (item.id == removeId)
                 {
                     productToRemove = item;
                     break;
-                } 
+                }
             }
             Items.Remove(productToRemove);
+        }
+
+        internal int ItemDetailSelectionView()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Please enter id for item you want to show:");
+            var itemId = Console.ReadKey();
+            int id;
+            Int32.TryParse(itemId.KeyChar.ToString(), out id);
+
+            return id;
+        }
+
+        internal void ItemDetailView(int detailId)
+        {
+            //ta metoda powinna wyświetlić wszystkie informacje o naszym item
+
+            Item productToShow = new Item();
+            foreach (var item in Items)
+            {
+                if (item.id == detailId)
+                {
+                    productToShow = item;
+                    break;
+                }
+            }
+            Console.WriteLine($"Item id: {productToShow.id}");
+            Console.WriteLine($"Item id: {productToShow.Name}");
+            Console.WriteLine($"Item id: {productToShow.TypeId}");
         }
     }
 }
