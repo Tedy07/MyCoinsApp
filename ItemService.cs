@@ -40,6 +40,7 @@ namespace MyCoinsApp
             Int32.TryParse(itemType.ToString(), out itemTypeId);
             Item item = new Item();
             item.TypeId = itemTypeId;
+            Console.WriteLine();
             Console.WriteLine("Please enter id for new item: ");
             var id = Console.ReadLine();
 
@@ -58,6 +59,7 @@ namespace MyCoinsApp
         public int RemoveItemView()
         // metoda ta zwróci int ponieważ użytkjownik poda numer przedmiotu do usunięcia
         {
+            Console.WriteLine();
             Console.WriteLine("Please enter id for item you want to remove:");
             var itemId = Console.ReadKey();
             int id;

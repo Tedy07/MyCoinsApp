@@ -9,14 +9,26 @@ namespace MyCoinsApp
 {
     public class MenuActionService
     {
-        private List<MenuAction> menuActions = new List<MenuAction>();
+        private List<MenuAction> menuActions;
+
+        public MenuActionService()
+        { 
+        menuActions = new List<MenuAction>();  
+        }
+
+
+
+
+
+        
+       // = new List<MenuAction>();
 
         //do wyświetlenia powyższej listy potrzeba poniższych metod
 
         public void AddNewAction(int id, string name, string menuName)
         {
             MenuAction menuAction = new MenuAction() { Id = id, Name = name, MenuName = menuName };
-            menuActions.Add(menuAction);
+             menuActions.Add(menuAction);
         }
 
         public List<MenuAction> GetMenuActionsByMenuName(string menuName)
