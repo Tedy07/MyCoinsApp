@@ -111,5 +111,52 @@ namespace MyCoinsApp
             Console.WriteLine($"Item id: {productToShow.Name}");
             Console.WriteLine($"Item id: {productToShow.TypeId}");
         }
+
+        public int ItemTypeSelectionView()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Please enter Type id for item you want to show:");
+            var itemId = Console.ReadKey();
+            int id;
+            Int32.TryParse(itemId.KeyChar.ToString(), out id);
+
+            //---------------
+
+            ConsoleKeyInfo AddNewItemView(MenuActionService actionService)
+            //ta metoda tworzy kolejne podmenu w pkt 1.
+            // poniżej wyświetlimy to menu dokładnie jak robiliśmy to w głównym menu, służy też do przekazania do switch
+            // Ta metoda odpowiedzialna jest za wyświetlanie kolejnych menu
+            {
+                var addNewItemViewMenu = actionService.GetMenuActionsByMenuName("AddNewItemViewMain");
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("Please select item type:");
+                for (int i = 0; i < addNewItemViewMenu.Count; i++)
+                {
+                    Console.WriteLine($"{addNewItemViewMenu[i].Id}. {addNewItemViewMenu[i].Name}");
+                }
+                var operation = Console.ReadKey();
+                return operation;
+            }
+            //---------------
+
+            return id;
+        }
+
+        public void ItemsByTypeIdView(int typeId)
+        {
+            Item toShow = new Item();
+            //List<Item> toShow = new List<Item>();
+            foreach (var item in Items)
+            {
+                if (item.TypeId == typeId)
+                {
+                    toShow = item;
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine($"Show My coins: {toShow.TypeId}");
+        }
+
     }
 }

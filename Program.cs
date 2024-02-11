@@ -33,7 +33,7 @@
                 var operation = Console.ReadKey();
                 //ReadKey odczytuje tylko 1 znak wprowadzony na klawiaturze
 
-                
+
                 switch (operation.KeyChar)
                 {
                     case '1':
@@ -49,7 +49,13 @@
                         itemService.ItemDetailView(detailId);
                         break;
                     case '4':
+                        var typeId = itemService.ItemTypeSelectionView();
+                        itemService.ItemsByTypeIdView(typeId);
                         break;
+                    //case '5':
+                    //    var finishApp = itemService.ItemFinishApp();
+                    //    itemService.FinishApp(finishApp);
+                    //    break;
                     default:
                         Console.WriteLine();
                         Console.WriteLine("Action you entered does not exist");
@@ -57,6 +63,8 @@
                         Console.WriteLine();
                 }
                 // tutaj się kończy pętla while, ciągłe działanie programu
+
+
             }
         }
         private static MenuActionService Initialize(MenuActionService actionService)
@@ -66,6 +74,7 @@
             actionService.AddNewAction(2, "Remove coin", "Main");
             actionService.AddNewAction(3, "Show details", "Main");
             actionService.AddNewAction(4, "List of coins ", "Main");
+            //actionService.AddNewAction(5, "Finish", "Main");
 
             actionService.AddNewAction(1, "gold", "AddNewItemViewMain");
             actionService.AddNewAction(2, "silver", "AddNewItemViewMain");
