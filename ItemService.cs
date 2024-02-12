@@ -49,7 +49,7 @@ namespace MyCoinsApp
             Console.WriteLine("Please enter name for new item:");
             var name = Console.ReadLine();
 
-            item.id = itemId;
+            item.Id = itemId;
             item.Name = name;
 
             Items.Add(item);
@@ -74,7 +74,7 @@ namespace MyCoinsApp
             Item productToRemove = new Item();
             foreach (var item in Items)
             {
-                if (item.id == removeId)
+                if (item.Id == removeId)
                 {
                     productToRemove = item;
                     break;
@@ -101,13 +101,13 @@ namespace MyCoinsApp
             Item productToShow = new Item();
             foreach (var item in Items)
             {
-                if (item.id == detailId)
+                if (item.Id == detailId)
                 {
                     productToShow = item;
                     break;
                 }
             }
-            Console.WriteLine($"Item id: {productToShow.id}");
+            Console.WriteLine($"Item id: {productToShow.Id}");
             Console.WriteLine($"Item id: {productToShow.Name}");
             Console.WriteLine($"Item id: {productToShow.TypeId}");
         }
@@ -130,7 +130,7 @@ namespace MyCoinsApp
                 var addNewItemViewMenu = actionService.GetMenuActionsByMenuName("AddNewItemViewMain");
                 Console.WriteLine();
                 Console.WriteLine();
-                Console.WriteLine("Please select item type:");
+                Console.WriteLine("Please select item type: to teraz");
                 for (int i = 0; i < addNewItemViewMenu.Count; i++)
                 {
                     Console.WriteLine($"{addNewItemViewMenu[i].Id}. {addNewItemViewMenu[i].Name}");

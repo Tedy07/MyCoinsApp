@@ -49,8 +49,10 @@
                         itemService.ItemDetailView(detailId);
                         break;
                     case '4':
+                        itemService.AddNewItemView(actionService);
                         var typeId = itemService.ItemTypeSelectionView();
                         itemService.ItemsByTypeIdView(typeId);
+                        
                         break;
                     //case '5':
                     //    var finishApp = itemService.ItemFinishApp();
